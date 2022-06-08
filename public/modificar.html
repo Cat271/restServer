@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es_MX.UTF-8">
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1" />
+	<title>Modificar</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <script type='text/javascript' src="js/jquery.min.js"></script>
+    <!--<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
+ 	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#outofcontext').hide();
+			$('#frGWA').hide();
+			$('#frGFB').hide();
+			$('#frCYT').hide();
+
+			$('#opcGWA').click(function(){
+				$('#frGWA').show();
+				$('#frGFB').hide();
+				$('#frCYT').hide();
+			});
+
+			$('#opcGFB').click(function() {
+				$('#frGFB').show();
+				$('#frGWA').hide();
+				$('#frCYT').hide();
+			});
+
+			$('#opcCYT').click(function() {
+				$('#frCYT').show();
+				$('#frGWA').hide();
+				$('#frGFB').hide();
+			});
+		});
+	</script>
+</head>
+<body><br>
+	<div id="dvTit">
+		<h1>Modificar</h1>
+	</div>
+	<br><br>
+	<div id="d2"><br>
+		<h3 id="selcon">Elige el dato que se va a modificar:</h3><br>
+		<center>
+			<button type="button" id="opcGWA">Usuario</button>
+			<button type="button" id="opcGFB">Contrase&ntilde;a</button>
+			<button type="button" id="opcCYT">Rol</button>
+			<br><br><p>Escribe los nuevos datos y haz clic en 'Guardar'.</p>
+		</center><br><br>
+		<form>
+			<div id="outofcontext"><form></form></div>
+			<div id="frGWA">
+				<h3>Usuario</h3>
+
+				 <form method="GET" action="edtUsuario">
+				 	<table>
+						<tr><td><p>ID de usuario:</p></td>
+						<td id='td_tipo2'><input type="text" name="edtID" required></td></tr>
+
+						<tr><td><p>Nuevo usuario:</p></td>
+						<td><input type="text" name="edtNombre" required></td></tr>
+
+					</table>
+					<br>
+					<table><tr><td><button type="submit" name="submit">Guardar</button></td></tr></table>
+				 </form>
+			</div>
+
+			<div id="frGFB">
+				<h3>Contrase&ntilde;a</h3>
+				 <form method="GET" action="edtPass">
+				 	<table>
+						<tr><td><p>ID de usuario:</p></td>
+						<td id='td_tipo2'><input type="text" name="edtID" required></td></tr>
+
+						<tr><td><p>Nueva contrase&ntilde;a:</p></td>
+						<td><input type="password" name="edtContra" required></td></tr>
+					</table>
+					<br>
+					<table><tr><td><button type="submit" name="submit">Guardar</button></td></tr></table>
+				 </form>
+			</div>
+
+			<div id="frCYT">
+				<h3>Rol</h3>
+				 <form method="GET" action="edtRol">
+				 	<table>
+						<tr><td><p>ID de usuario:</p></td>
+						<td id='td_tipo2'><input type="text" name="edtID" required></td></tr>
+
+						<tr><td><p>Nuevo rol:</p></td>
+						<td><select type="text" name="edtNewRol" placeholder=" Rol">
+							<option value="admin">Administrador</option>
+							<option value="editor" selected>Editor</option>
+						</select></td></tr>
+					</table>
+					<br>
+					<table><tr><td><button type="submit" name="submit">Guardar</button></td></tr></table>
+				 </form>
+			</div>
+		</form>
+    </div>
+	<br>
+	<table><tr><td><a href="ver"><button>Volver</button></a></td></tr></table>
+</body>
+</html>
