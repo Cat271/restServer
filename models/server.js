@@ -34,7 +34,7 @@ class Server{
 
 				dbo.collection("users").updateOne(consulta, cambiarNombre, function(err, res){
 					if (err) throw err;
-					console.log("Se modific\u00F3 un nombre de usuario");
+					console.log("Se ha modificado un nombre de usuario");
 					db.close();
 				});
 			});
